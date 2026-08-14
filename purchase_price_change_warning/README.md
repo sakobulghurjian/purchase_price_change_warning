@@ -19,6 +19,18 @@ Purchase Price Change Warning is a lightweight Odoo 19 Community addon that help
 
 The only dependency is Odoo's standard `purchase` addon.
 
+## Odoo Apps publication
+
+The public source repository is:
+
+`https://github.com/sakobulghurjian/purchase_price_change_warning`
+
+Register the Odoo 19 branch in Odoo Apps with this SSH repository URL:
+
+`ssh://git@github.com/sakobulghurjian/purchase_price_change_warning#19.0`
+
+The repository is public, so Odoo Apps can read it without private-repository credentials. A read-only collaborator invitation has also been sent to the official GitHub account `online-odoo`; the invitation remains subject to acceptance by that account.
+
 ## Configuration
 
 Open **Purchase > Configuration > Settings > Purchase Price Change Warning**. The feature is enabled by default with an inclusive 10% threshold and **Price Increase Only** mode.
@@ -32,4 +44,3 @@ Historical prices use the gross tax-exclusive `price_unit` before line discount.
 ## License
 
 LGPL-3. See `LICENSE`.
-
