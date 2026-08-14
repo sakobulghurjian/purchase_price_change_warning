@@ -1,0 +1,124 @@
+<!--
+Copyright (C) 2026 Yerevan Digital Co
+License LGPL-3.0 or later (https://www.gnu.org/licenses/lgpl-3.0.html)
+-->
+<section class="oe_container py-4">
+    <div class="row align-items-center">
+        <div class="col-lg-8">
+            <h1 class="display-4 font-weight-bold mb-3">Purchase Price Change Warning</h1>
+            <p class="lead text-muted mb-4">
+                Give purchasers immediate context when a vendor's price changes,
+                without interrupting the RFQ or purchase workflow.
+            </p>
+            <div class="d-flex flex-wrap mb-3">
+                <span class="badge badge-primary mr-2 mb-2 p-2">Odoo 19 Community</span>
+                <span class="badge badge-light border mr-2 mb-2 p-2">Purchase</span>
+                <span class="badge badge-light border mr-2 mb-2 p-2">Multi-company</span>
+                <span class="badge badge-light border mb-2 p-2">LGPL-3</span>
+            </div>
+        </div>
+        <div class="col-lg-4 text-center mt-4 mt-lg-0">
+            <img src="icon.png"
+                 class="img img-fluid rounded shadow-sm"
+                 alt="Purchase Price Change Warning application icon"/>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container py-4 text-center">
+    <img src="banner.png"
+         class="img img-fluid rounded shadow-sm"
+         alt="Purchase document with a price comparison and warning symbol"/>
+</section>
+
+<section class="oe_container py-5">
+    <div class="text-center mb-4">
+        <h2 class="font-weight-bold">See the last vendor price while you buy</h2>
+        <p class="lead text-muted">
+            Each purchase line compares the current unit price with the latest confirmed
+            purchase for the same product and commercial vendor.
+        </p>
+    </div>
+    <div class="row">
+        <div class="col-md-4 mb-4">
+            <div class="border rounded shadow-sm h-100 p-4">
+                <h3 class="h4 font-weight-bold">Useful context</h3>
+                <p class="text-muted mb-0">
+                    Review the previous price, signed percentage change, purchase reference,
+                    and purchase date directly from the purchase order.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="border rounded shadow-sm h-100 p-4">
+                <h3 class="h4 font-weight-bold">Fair comparison</h3>
+                <p class="text-muted mb-0">
+                    Historical prices are converted into the current line's unit of measure
+                    and currency before the percentage is calculated.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="border rounded shadow-sm h-100 p-4">
+                <h3 class="h4 font-weight-bold">Non-blocking warning</h3>
+                <p class="text-muted mb-0">
+                    A clear informational alert highlights qualifying changes while users
+                    remain free to edit, save, send, and confirm the order.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container py-5 bg-light rounded">
+    <div class="row align-items-center px-3">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+            <h2 class="font-weight-bold">Company-aware configuration</h2>
+            <p class="text-muted">
+                Configure the warning independently for each company from Purchase settings.
+            </p>
+            <ul class="pl-4 text-muted mb-0">
+                <li class="mb-2">Enable or disable price-change warnings</li>
+                <li class="mb-2">Set the percentage threshold, including the boundary value</li>
+                <li>Warn on increases only, or on both increases and decreases</li>
+            </ul>
+        </div>
+        <div class="col-lg-6">
+            <div class="border rounded bg-white shadow-sm p-4">
+                <h3 class="h4 font-weight-bold">Designed for purchasing teams</h3>
+                <p class="text-muted mb-0">
+                    Comparisons stay within the active company, ignore draft and cancelled
+                    history, and update when the vendor, product, unit, currency, quantity,
+                    or current unit price changes.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container py-5">
+    <div class="row">
+        <div class="col-md-6 mb-4">
+            <h2 class="h3 font-weight-bold">Compatibility</h2>
+            <ul class="pl-4 text-muted">
+                <li class="mb-2">Odoo 19 Community Edition</li>
+                <li class="mb-2">Depends only on the standard Purchase application</li>
+                <li class="mb-2">Multi-company and multi-currency aware</li>
+                <li>No external Python dependencies</li>
+            </ul>
+        </div>
+        <div class="col-md-6 mb-4">
+            <h2 class="h3 font-weight-bold">Straightforward by design</h2>
+            <p class="text-muted">
+                The addon adds focused comparison fields and an informative warning to
+                standard purchase orders. It does not add approvals, confirmation blocks,
+                dashboards, or extra workflow states.
+            </p>
+        </div>
+    </div>
+</section>
+
+<section class="oe_container py-5 text-center">
+    <h2 class="font-weight-bold">Built by Yerevan Digital Co</h2>
+    <p class="text-muted mb-0">Licensed under LGPL-3.0 or later.</p>
+</section>

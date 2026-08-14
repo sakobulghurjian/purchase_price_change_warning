@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_config_settings_view_form_purchase_price_change_warning" model="ir.ui.view">
+        <field name="name">res.config.settings.view.form.purchase.price.change.warning</field>
+        <field name="model">res.config.settings</field>
+        <field name="inherit_id" ref="purchase.res_config_settings_view_form_purchase"/>
+        <field name="arch" type="xml">
+            <xpath expr="//block[@name='purchase_setting_container']" position="after">
+                <block title="Purchase Price Change Warning" name="purchase_price_change_warning_settings">
+                    <setting id="purchase_price_change_warning_enabled"
+                             company_dependent="1"
+                             string="Enable Purchase Price Change Warning"
+                             help="Compare an RFQ line with the latest confirmed purchase from the same vendor.">
+                        <field name="purchase_price_change_warning_enabled"/>
+                    </setting>
+                    <setting id="purchase_price_change_warning_threshold"
+                             company_dependent="1"
+                             string="Warning Threshold (%)"
+                             invisible="not purchase_price_change_warning_enabled"
+                             help="Show a warning when the percentage change reaches this value.">
+                        <field name="purchase_price_change_warning_threshold"/>
+                    </setting>
+                    <setting id="purchase_price_change_warning_type"
+                             company_dependent="1"
+                             string="Warning Type"
+                             invisible="not purchase_price_change_warning_enabled"
+                             help="Warn only for increases, or for both increases and decreases.">
+                        <field name="purchase_price_change_warning_type"/>
+                    </setting>
+                </block>
+            </xpath>
+        </field>
+    </record>
+</odoo>

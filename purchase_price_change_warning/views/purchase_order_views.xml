@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="purchase_order_form_purchase_price_change_warning" model="ir.ui.view">
+        <field name="name">purchase.order.form.purchase.price.change.warning</field>
+        <field name="model">purchase.order</field>
+        <field name="inherit_id" ref="purchase.purchase_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']/list" position="attributes">
+                <attribute name="decoration-warning">purchase_line_warn_msg or purchase_price_change_warning</attribute>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/list/field[@name='price_unit']" position="after">
+                <field name="previous_purchase_price" string="Previous Price" optional="show" readonly="1"/>
+                <field name="price_change_display" string="Change %" optional="show" readonly="1"/>
+                <field name="purchase_price_change_warning_icon" string="Warning" optional="show" readonly="1"/>
+                <field name="purchase_price_change_warning" column_invisible="True"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form/group" position="before">
+                <field name="currency_id" invisible="1"/>
+                <div class="alert alert-warning" role="alert" invisible="not purchase_price_change_warning">
+                    <field name="purchase_price_change_warning_message" nolabel="1" readonly="1"/>
+                </div>
+            </xpath>
+            <xpath expr="//field[@name='order_line']/form/group/group/field[@name='price_unit']" position="after">
+                <field name="previous_purchase_price" readonly="1"/>
+                <field name="price_change_display" readonly="1"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
