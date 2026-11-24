@@ -59,7 +59,7 @@ class TestPurchasePriceChangeWarning(TransactionCase):
             "order_id": order.id,
             "product_id": (product or self.product).id,
             "product_qty": quantity,
-            "product_uom_id": (uom or self.unit).id,
+            "uom_id": (uom or self.unit).id,
             "price_unit": price,
             "date_planned": datetime(2026, 2, 1, 10, 0, 0),
         })
@@ -80,7 +80,7 @@ class TestPurchasePriceChangeWarning(TransactionCase):
         self.assertAlmostEqual(current.price_change_percentage, 20.0)
         self.assertEqual(current.price_change_display, "+20.00%")
         self.assertEqual(current.previous_purchase_quantity, latest.product_qty)
-        self.assertEqual(current.previous_purchase_uom_id, latest.product_uom_id)
+        self.assertEqual(current.previous_purchase_uom_id, latest.uom_id)
         self.assertEqual(current.previous_purchase_currency_id, latest.currency_id)
 
     def test_different_vendor_and_product_are_ignored(self):
@@ -108,7 +108,7 @@ class TestPurchasePriceChangeWarning(TransactionCase):
             "order_id": order.id,
             "product_id": self.product.id,
             "product_qty": 1.0,
-            "product_uom_id": self.unit.id,
+            "uom_id": self.unit.id,
             "price_unit": 10.0,
             "date_planned": datetime(2026, 2, 1, 10, 0, 0),
         })
@@ -258,7 +258,7 @@ class TestPurchasePriceChangeWarning(TransactionCase):
             "order_id": first.order_id.id,
             "product_id": self.product.id,
             "product_qty": 1.0,
-            "product_uom_id": self.unit.id,
+            "uom_id": self.unit.id,
             "price_unit": 15.0,
             "date_planned": datetime(2026, 2, 1, 10, 0, 0),
         })

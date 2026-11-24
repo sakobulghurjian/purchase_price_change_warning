@@ -1,6 +1,6 @@
 # Purchase Price Change Warning
 
-Purchase Price Change Warning is a lightweight Odoo 19 Community addon that helps purchasers notice unexpected vendor price changes while preparing an RFQ or purchase order.
+Purchase Price Change Warning is a lightweight Odoo 20 Community addon that helps purchasers notice unexpected vendor price changes while preparing an RFQ or purchase order.
 
 ## Features
 
@@ -13,7 +13,7 @@ Purchase Price Change Warning is a lightweight Odoo 19 Community addon that help
 
 ## Installation
 
-1. Add this directory to an Odoo 19 addons path.
+1. Add this directory to an Odoo 20 addons path.
 2. Update the Apps list.
 3. Install **Purchase Price Change Warning**.
 
@@ -25,9 +25,9 @@ The public source repository is:
 
 `https://github.com/sakobulghurjian/purchase_price_change_warning`
 
-Register the Odoo 19 branch in Odoo Apps with this SSH repository URL:
+Register the Odoo 20 branch in Odoo Apps with this SSH repository URL:
 
-`ssh://git@github.com/sakobulghurjian/purchase_price_change_warning#19.0`
+`ssh://git@github.com/sakobulghurjian/purchase_price_change_warning#20.0`
 
 The repository is public, so Odoo Apps can read it without private-repository credentials. A read-only collaborator invitation has also been sent to the official GitHub account `online-odoo`; the invitation remains subject to acceptance by that account.
 

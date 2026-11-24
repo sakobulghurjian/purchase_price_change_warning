@@ -68,7 +68,7 @@ class PurchaseOrderLine(models.Model):
         "order_id.company_id.purchase_price_change_warning_threshold",
         "order_id.company_id.purchase_price_change_warning_type",
         "product_id",
-        "product_uom_id",
+        "uom_id",
         "product_qty",
         "price_unit",
     )
@@ -97,7 +97,7 @@ class PurchaseOrderLine(models.Model):
             line.previous_purchase_order_id = previous_line.order_id
             line.previous_purchase_date = previous_date
             line.previous_purchase_quantity = previous_line.product_qty
-            line.previous_purchase_uom_id = previous_line.product_uom_id
+            line.previous_purchase_uom_id = previous_line.uom_id
             line.previous_purchase_currency_id = previous_line.currency_id
             line.purchase_price_change_warning = warning
             line.purchase_price_change_warning_icon = "⚠" if warning else False
@@ -122,7 +122,7 @@ class PurchaseOrderLine(models.Model):
         return bool(
             not self.display_type
             and self.product_id
-            and self.product_uom_id
+            and self.uom_id
             and self.order_id.partner_id
             and self.currency_id
             and self.company_id
@@ -159,9 +159,9 @@ class PurchaseOrderLine(models.Model):
 
     def _normalize_previous_price(self, previous_line):
         self.ensure_one()
-        price = previous_line.product_uom_id._compute_price(
+        price = previous_line.uom_id._compute_price(
             previous_line.price_unit,
-            self.product_uom_id,
+            self.uom_id,
         )
         conversion_date = fields.Date.to_date(
             previous_line.order_id.date_approve or previous_line.order_id.date_order
